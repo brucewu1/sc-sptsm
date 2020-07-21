@@ -1,0 +1,48 @@
+{"flowRule": [
+    {
+      "resource": "customized_api1",
+      "resourceMode": 1,
+      "count": 10.0,
+      "intervalSec": 1.0,
+      "paramItem": {
+          "parseStrategy": 2,
+          "fieldName": "command-id",
+          "pattern": "get.rechargecard",
+          "matchStrategy": 0
+      }
+    },
+    {
+      "resource": "customized_api1",
+      "resourceMode": 1,
+      "count": 100.0,
+      "intervalSec": 1.0,
+      "paramItem": {
+          "parseStrategy": 2,
+          "fieldName": "command-id",
+          "pattern": "transcard.restore",
+          "matchStrategy": 0
+      }
+    },
+    {
+      "resource": "route-demo-5",
+      "resourceMode": 0,
+      "count": 1.0,
+      "intervalSec": 5.0,
+    }
+],
+"apiDefinition": [
+    {
+        "apiName": "customized_api1",
+        "predicateItems": [{
+            "pattern": "/sptsm/dispacher",
+            "matchStrategy": 0
+        }]
+    },
+    {
+        "apiName": "customized_api2",
+        "predicateItems": [{
+            "pattern": "/mq/getDemo",
+            "matchStrategy": 0
+        }]
+    }
+]}
